@@ -13,4 +13,6 @@ const tokenSchema = new mongoose.Schema({
     servedAt:{type:Date,default:null},
 }, { timestamps: true });
 
+tokenSchema.index({queueId:1,tokenNumber:1},{unique:true});
+
 module.exports=mongoose.model('Token',tokenSchema);
